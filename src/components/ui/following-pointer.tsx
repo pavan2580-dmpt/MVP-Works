@@ -20,11 +20,17 @@ export const FollowerPointerCard = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
-  const [cursorPosition, setCursorPosition] = useState<MousePosition>({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState<MousePosition>({
+    x: 0,
+    y: 0,
+  });
+  const [cursorPosition, setCursorPosition] = useState<MousePosition>({
+    x: 0,
+    y: 0,
+  });
   const [isInside, setIsInside] = useState<boolean>(false);
-  const animationFrameRef = useRef<number>();
-  const cursorAnimationRef = useRef<number>();
+  const animationFrameRef = useRef<number | null>(null);
+  const cursorAnimationRef = useRef<number | null>(null);
 
   useEffect(() => {
     let currentX = 0;
@@ -44,10 +50,13 @@ export const FollowerPointerCard = ({
       const animate = () => {
         currentX += (targetX - currentX) * 0.1;
         currentY += (targetY - currentY) * 0.1;
-        
+
         setMousePosition({ x: currentX, y: currentY });
 
-        if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+        if (
+          Math.abs(targetX - currentX) > 0.1 ||
+          Math.abs(targetY - currentY) > 0.1
+        ) {
           animationFrameRef.current = requestAnimationFrame(animate);
         }
       };
@@ -56,10 +65,13 @@ export const FollowerPointerCard = ({
       const animateCursor = () => {
         cursorX += (globalX - cursorX) * 0.15;
         cursorY += (globalY - cursorY) * 0.15;
-        
+
         setCursorPosition({ x: cursorX, y: cursorY });
 
-        if (Math.abs(globalX - cursorX) > 0.1 || Math.abs(globalY - cursorY) > 0.1) {
+        if (
+          Math.abs(globalX - cursorX) > 0.1 ||
+          Math.abs(globalY - cursorY) > 0.1
+        ) {
           cursorAnimationRef.current = requestAnimationFrame(animateCursor);
         }
       };
@@ -118,10 +130,7 @@ export const FollowerPointerCard = ({
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative ${className || ""}`}
-    >
+    <div ref={containerRef} className={`relative ${className || ""}`}>
       {children}
       {/* Custom Cursor */}
       {isInside && (
@@ -164,5 +173,3 @@ export const FollowerPointerCard = ({
     </div>
   );
 };
-
-

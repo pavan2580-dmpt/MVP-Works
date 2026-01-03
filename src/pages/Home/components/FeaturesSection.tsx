@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { Zap, Shield, Globe, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function FeaturesSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
   const features = [
     {
       icon: Zap,
@@ -44,8 +41,6 @@ export default function FeaturesSection() {
               key={i}
               to="/learn-more"
               className="group p-8 rounded-3xl bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 hover:border-slate-700 transition-all duration-300 hover:-translate-y-2 cursor-pointer block"
-              onMouseEnter={() => setHoveredCard(i)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               <div
                 className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
@@ -65,4 +60,3 @@ export default function FeaturesSection() {
     </section>
   );
 }
-

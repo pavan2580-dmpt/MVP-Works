@@ -1,12 +1,10 @@
 import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeaturesSection";
-import ParticleScene from "./components/ParticleScene";
 import ExpertiseSection from "./components/ExpertiseSection";
 import StorySection from "./components/StorySection";
 import StatsSection from "./components/StatsSection";
 import { HowWeWorkSection } from "./components/HowWeWorkSection";
 import CTASection from "./components/CTASection";
-
 
 function HomePage() {
   return (
