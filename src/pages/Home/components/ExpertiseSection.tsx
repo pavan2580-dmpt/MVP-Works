@@ -14,7 +14,7 @@ import mysql from "../../../assets/sql.png";
 import postgresql from "../../../assets/Postgresql_elephant.svg";
 import nestjs from "../../../assets/NestJS.svg";
 import graphql from "../../../assets/GraphQL.png";
-import reactnative from "../../../assets/react-native.png";
+import reactnative from "../../../assets/React-native.png";
 import ios from "../../../assets/ios.png";
 import langchain from "../../../assets/langchain.png";
 import openai from "../../../assets/openai.webp";
