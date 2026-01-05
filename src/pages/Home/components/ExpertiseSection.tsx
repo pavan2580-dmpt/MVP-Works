@@ -12,7 +12,7 @@ import dynamo from "../../../assets/dynamo.png";
 import mongodb from "../../../assets/mongodb.png";
 import mysql from "../../../assets/sql.png";
 import postgresql from "../../../assets/Postgresql_elephant.svg";
-import nestjs from "../../../assets/Nestjs.svg";
+import nestjs from "../../../assets/NestJS.svg";
 import graphql from "../../../assets/GraphQL.png";
 import reactnative from "../../../assets/react-native.png";
 import ios from "../../../assets/ios.png";
@@ -22,7 +22,6 @@ import langsmith from "../../../assets/langsmith.png";
 import ollama from "../../../assets/ollama.png";
 import adk from "../../../assets/adk.png";
 import gemini from "../../../assets/gemini.webp";
-
 
 type Technology = {
   name: string;
@@ -37,14 +36,12 @@ type Category = {
 export default function ExpertiseSection() {
   const [activeTab, setActiveTab] = useState<string>("Web");
 
-
-
   const categories: Category[] = [
     {
       name: "Web",
       technologies: [
         { name: "HTML", icon: html },
-        {name:"Three.js", icon: threejs},
+        { name: "Three.js", icon: threejs },
         { name: "Scss", icon: scss },
         { name: "React", icon: react },
         { name: "Next.js", icon: nextjs },
@@ -52,8 +49,6 @@ export default function ExpertiseSection() {
         { name: "Typescript", icon: typescript },
         { name: "NestJS", icon: nestjs },
         { name: "FastAPI", icon: fastapi },
-
-
       ],
     },
     {
@@ -67,10 +62,10 @@ export default function ExpertiseSection() {
     {
       name: "Database",
       technologies: [
-        {name:"MongoDB", icon: mongodb},
-        {name:"MySQL", icon: mysql},
-        {name:"PostgreSQL", icon: postgresql},
-        {name:"DynamoDB", icon: dynamo},
+        { name: "MongoDB", icon: mongodb },
+        { name: "MySQL", icon: mysql },
+        { name: "PostgreSQL", icon: postgresql },
+        { name: "DynamoDB", icon: dynamo },
         { name: "GraphQL", icon: graphql },
       ],
     },
@@ -83,9 +78,8 @@ export default function ExpertiseSection() {
         { name: "Ollama", icon: ollama },
         { name: "ADK", icon: adk },
         { name: "Gemini", icon: gemini },
-
       ],
-    }
+    },
   ];
 
   const activeCategory = categories.find((cat) => cat.name === activeTab);
